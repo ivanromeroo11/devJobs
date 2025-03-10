@@ -3,6 +3,8 @@ const { engine } = require('express-handlebars');
 const path = require('path');
 const router = require('./routes');
 
+require('dotenv').config({ path: 'variables.env' });
+
 const app = express();
 
 // Habilitar handlebars como template engine
@@ -16,6 +18,4 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', router());
 
-app.listen(5000, () => {
-    console.log('Servidor escuchando en el puerto 5000');
-});
+app.listen(process.env.PUERTO);
