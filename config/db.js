@@ -10,4 +10,5 @@ mongoose.connection.on('error', (error) => {
 });
 
 // Importar los modelos aquí
+require('../models/Vacantes');
 // require('../models/YourModel'); // Comentar o eliminar esta línea si no tienes un modelo específico
